@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalles Persona</title>
+</head>
+<body>
+<h1>Detalles Persona</h1>
+<div th:if="${persona}">
+    <table>
+        <thead>
+            <tr>
+              <th>ID</th>
+              <th>Rut</th>
+              <th>Nombres</th>
+              <th>Apellidos</th>
+              <th>Sexo</th>
+              <th>Fecha Nacimiento</th>
+              <th>Direccion</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td th:text="${persona.getId()}"></td>
+              <td th:text="${persona.getRut()}"></td>
+              <td th:text="${persona.getNombres()}"></td>
+              <td th:text="${persona.getApellidos()}"></td>
+              <td th:text="${persona.getSexo()}"></td>
+              <td th:text="${persona.getFechaNacimiento()}"></td>
+              <td>
+                <ul>
+                  <li th:text="${persona.getDireccion().getDireccionString()}"></li>
+                </ul>
+              </td>
+            </tr>
+            <tr th:else>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div th:unless="${persona}">
+  <p>No se encontraron datos de la persona.</p>
+</div>
+</body>
+</html>

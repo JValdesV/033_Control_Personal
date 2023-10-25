@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Contenido</title>
+</head>
+<body>
+    <h1>Contenido</h1>
+    <h4 th:if="${codigo}" th:text="${codigo}"></h4>
+    <h4 th:if="${error}" th:text="${error}"></h4>
+</body>
+</html>
